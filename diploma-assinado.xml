@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DiplomaDigital xmlns="https://b4.sistema/validador" versao="1.0">
+  <Metadados>
+    <CodigoValidacao>298.298.01247760.290357</CodigoValidacao>
+    <DataConsulta>2026-02-26T00:00:00-03:00</DataConsulta>
+    <Sistema>Sistema B4</Sistema>
+    <Status>ATIVO</Status>
+  </Metadados>
+
+  <Diplomado>
+    <Nome>DANIEL ROCHA DA SILVA</Nome>
+    <Matricula>01247760</Matricula>
+    <RG>301561817 - DETRAN/RJ</RG>
+    <UF>RJ</UF>
+    <Nacionalidade>BRASILEIRO</Nacionalidade>
+    <DataNascimento>1999-05-22</DataNascimento>
+    <DataIngresso>2020-07-01</DataIngresso>
+    <DataConclusao>2022-11-11</DataConclusao>
+  </Diplomado>
+
+  <Curso>
+    <Nome>Curso Superior de Tecnologia em Ciência Da Computação</Nome>
+    <Modalidade>Sistema Presencial Conectado – Modalidade a Distância</Modalidade>
+    <FormaIngresso>Exame Nacional do Ensino Médio (ENEM)</FormaIngresso>
+    <Polo>RIO DE JANEIRO/RJ - I(3093)U</Polo>
+    <Turno>Noturno</Turno>
+    <CargaHorariaCursada>3200 h/a</CargaHorariaCursada>
+    <CargaHorariaCurso>3200 h/a</CargaHorariaCurso>
+    <AtividadesComplementares>100 horas (Concluído)</AtividadesComplementares>
+  </Curso>
+
+  <Diploma>
+    <NumeroRegistro>290357</NumeroRegistro>
+    <DataColacaoGrau>2022-12-05</DataColacaoGrau>
+    <DataExpedicao>2022-12-20</DataExpedicao>
+    <DataRegistro>2023-02-14</DataRegistro>
+    <Situacao>VALIDO</Situacao>
+  </Diploma>
+
+  <Instituicao>
+    <Nome>Universidade Pitágoras Unopar Anhanguera</Nome>
+    <CodigoEMEC>298</CodigoEMEC>
+    <CNPJ>38.733.648/0001-40</CNPJ>
+    <Reconhecimento>Portaria Ministerial nº 654 de 22/03/2019 - D.O.U. 25/03/2019</Reconhecimento>
+    <Credenciamento>Decreto Federal de 03/07/2017 - D.O.U. nº 126 de 04/07/2017</Credenciamento>
+  </Instituicao>
+
+  <Assinaturas>
+    <AssinaturaDigital algoritmo="RSA-SHA256">
+      <Assinante>Isadora Ferreira Costa Faria</Assinante>
+      <Cargo>Diretora Processos Regulatórios</Cargo>
+      <DataAssinatura>2023-02-14</DataAssinatura>
+      <DigestValue>8f6ef7f6328eb6ba8e5ca03f4be8a67be8ebf4a53b4ef9cf76d11ed7b3cb95ec</DigestValue>
+      <SignatureValue>MEUCIQDPnDG2X8y4sK-Representacao-Validacao-B4-XML-Assinado-AQIgWm3oN9p</SignatureValue>
+    </AssinaturaDigital>
+  </Assinaturas>
+</DiplomaDigital>
