@@ -1,422 +1,422 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sistema B4 | Validação de Diploma</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sistema B4 Diplomas</title>
     <link rel="icon" type="image/png" href="icone-site.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-      :root {
-        --bg: #f4f5f8;
-        --card: #ffffff;
-        --line: #dfe2e8;
-        --text: #374151;
-        --muted: #6b7280;
-        --title: #4b5563;
-        --primary: #2d3748;
-        --ok: #41b79c;
-      }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      * { box-sizing: border-box; }
+        body {
+            font-family: "Nunito Sans", "Segoe UI", Roboto, Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            position: relative;
+            overflow: hidden;
+        }
 
-      body {
-        margin: 0;
-        font-family: "Nunito Sans", "Segoe UI", Roboto, Arial, sans-serif;
-        background: var(--bg);
-        color: var(--text);
-      }
+        /* Imagem de fundo opcional - descomente e adicione sua imagem */
+        /*
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('background.jpg') center/cover no-repeat;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        */
 
-      .page {
-        width: 100%;
-        min-height: 100vh;
-      }
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 500px;
+            gap: 0;
+        }
 
-      .topbar {
-        background: #fff;
-        border: 1px solid var(--line);
-        border-left: 0;
-        border-right: 0;
-        padding: 12px 16px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 16px;
-      }
+        .left-side {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 80px;
+            color: white;
+        }
 
-      .logo {
-        height: 52px;
-        width: auto;
-      }
+        .logo-area {
+            margin-bottom: 60px;
+        }
 
-      .content {
-        display: grid;
-        grid-template-columns: 390px 1fr;
-        gap: 0;
-      }
+        .logo {
+            height: 60px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
 
-      .left-panel {
-        border-right: 1px solid var(--line);
-        padding: 18px 22px;
-        background: #fff;
-      }
+        .hero-title {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: white;
+        }
 
-      .right-panel {
-        padding: 18px 10px 22px;
-      }
+        .hero-subtitle {
+            font-size: 18px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 520px;
+        }
 
-      .status {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 30px;
-        color: var(--ok);
-        line-height: 1;
-      }
+        .hero-subtitle strong {
+            color: #fbbf24;
+            font-weight: 600;
+        }
 
-      .status::before {
-        content: "";
-        width: 14px;
-        height: 14px;
-        border-radius: 999px;
-        background: var(--ok);
-        flex: 0 0 auto;
-      }
+        .right-side {
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.2);
+        }
 
-      .status-text {
-        font-size: 30px;
-        font-weight: 300;
-      }
+        .login-card {
+            width: 100%;
+            max-width: 400px;
+        }
 
-      .status-code {
-        margin: 12px 0 14px 62px;
-        color: #4b5563;
-        font-size: 20px;
-        line-height: 1.35;
-        overflow-wrap: anywhere;
-        word-break: break-word;
-      }
+        .login-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-      .action {
-        width: 100%;
-        border: 1px solid var(--line);
-        border-radius: 6px;
-        background: #fff;
-        color: #4b5563;
-        padding: 11px 12px;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        font-size: 16px;
-        margin-bottom: 10px;
-      }
+        .login-header h1 {
+            font-size: 28px;
+            color: #2d3748;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
 
-      .action-icon {
-        width: 22px;
-        height: 22px;
-        flex: 0 0 auto;
-        color: #2d3748;
-      }
+        .login-header p {
+            color: #6b7280;
+            font-size: 15px;
+        }
 
-      .action:hover { background: #f9fafb; }
+        .form-group {
+            margin-bottom: 24px;
+        }
 
-      .panel-title {
-        margin: 2px 0 12px;
-        color: #4b5563;
-        font-size: 34px;
-        font-weight: 700;
-      }
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 8px;
+        }
 
-      .section {
-        border: 1px solid var(--line);
-        border-radius: 4px;
-        background: #fff;
-        padding: 16px 18px;
-        margin-bottom: 14px;
-      }
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: all 0.2s;
+            background: white;
+        }
 
-      .section-label {
-        color: #4b5563;
-        font-size: 15px;
-        font-weight: 700;
-        letter-spacing: 0.8px;
-        text-transform: uppercase;
-        margin-bottom: 14px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
+        .form-group input:focus {
+            outline: none;
+            border-color: #2d3748;
+            box-shadow: 0 0 0 3px rgba(45, 55, 72, 0.1);
+        }
 
-      .section-label::after {
-        content: "";
-        height: 1px;
-        background: #cfd4dc;
-        flex: 1;
-      }
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
 
-      .fields {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 18px 16px;
-      }
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #4b5563;
+            cursor: pointer;
+        }
 
-      .field small {
-        display: block;
-        color: #7b7f87;
-        font-size: 12px;
-        text-transform: uppercase;
-        margin-bottom: 3px;
-        font-weight: 700;
-        letter-spacing: 0.7px;
-      }
+        .remember-me input {
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+        }
 
-      .field div {
-        color: #303846;
-        font-size: 15px;
-        line-height: 1.35;
-      }
+        .forgot-password {
+            color: #2d3748;
+            text-decoration: none;
+            font-weight: 600;
+        }
 
-      .field.span-2 { grid-column: span 2; }
-      .field.span-4 { grid-column: span 4; }
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
 
-      .obs-list {
-        margin: 0;
-        padding-left: 20px;
-      }
+        .btn-login {
+            width: 100%;
+            padding: 14px;
+            background: #fbbf24;
+            color: #1a202c;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
 
-      .obs-list li {
-        margin-bottom: 8px;
-        font-size: 15px;
-        line-height: 1.45;
-      }
+        .btn-login:hover {
+            background: #f59e0b;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
+        }
 
-      .table-wrap {
-        overflow: auto;
-      }
+        .btn-login:active {
+            transform: translateY(0);
+        }
 
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        min-width: 900px;
-      }
+        .divider {
+            text-align: center;
+            margin: 32px 0;
+            position: relative;
+            color: #9ca3af;
+            font-size: 14px;
+        }
 
-      th, td {
-        border-bottom: 1px solid var(--line);
-        text-align: left;
-        padding: 10px 8px;
-        font-size: 14px;
-      }
+        .divider::before,
+        .divider::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 42%;
+            height: 1px;
+            background: #e5e7eb;
+        }
 
-      th {
-        color: #6b7280;
-        font-size: 14px;
-        text-transform: uppercase;
-      }
+        .divider::before { left: 0; }
+        .divider::after { right: 0; }
 
-      @media (max-width: 1280px) {
-        .content { grid-template-columns: 320px 1fr; }
-        .status-text, .panel-title { font-size: 28px; }
-        .status-code { margin-left: 34px; font-size: 18px; }
-        .action { font-size: 15px; }
-        .field div { font-size: 14px; }
-      }
+        .validate-diploma {
+            text-align: center;
+        }
 
-      @media (max-width: 980px) {
-        .content { grid-template-columns: 1fr; }
-        .left-panel { border-right: 0; border-bottom: 1px solid var(--line); }
-        .right-panel { padding: 14px; }
-        .fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        .field.span-4, .field.span-2 { grid-column: auto; }
-      }
+        .validate-diploma-title {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 16px;
+        }
 
-      @media (max-width: 620px) {
-        .topbar { padding: 10px 12px; }
-        .fields { grid-template-columns: 1fr; }
-        .status-code { margin-left: 0; font-size: 16px; }
-      }
+        .validate-form {
+            display: flex;
+            gap: 8px;
+        }
+
+        .validate-form input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        .validate-form button {
+            padding: 12px 20px;
+            background: #f3f4f6;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .validate-form button:hover {
+            background: #e5e7eb;
+        }
+
+        .validate-form button svg {
+            width: 20px;
+            height: 20px;
+            color: #4b5563;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .left-side {
+                padding: 40px 30px;
+                min-height: 40vh;
+            }
+
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .right-side {
+                box-shadow: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .left-side {
+                padding: 30px 20px;
+            }
+
+            .hero-title {
+                font-size: 28px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .right-side {
+                padding: 30px 20px;
+            }
+
+            .form-options {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+        }
     </style>
-  </head>
-  <body>
-    <div class="page">
-      <header class="topbar">
-        <img src="LOGO-B4.png" alt="Logo B4" class="logo" />
-      </header>
-
-      <main class="content">
-        <aside class="left-panel">
-          <div class="status">
-            <span class="status-text">Diploma válido</span>
-          </div>
-          <div class="status-code">
-            <div style="margin-bottom: 8px;">Código: <strong>298.298.01247760.290357</strong></div>
-            <div style="margin-bottom: 8px; font-size: 15px;">Protocolo: DIP-RJ-2023-00290357-BR</div>
-            <div style="font-size: 14px; color: #6b7280; word-break: break-all;">Hash SHA-256: 8f4d2c9e7b1a6f3d5e8c2a9b7f4e1d3c6a8b5f2e9d7c4a1b8e5f2c9a6d3b7f4e</div>
-          </div>
-
-          <a class="action" href="DIPLOMA.pdf" download>
-            <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 3v11" />
-              <path d="m7 10 5 5 5-5" />
-              <path d="M4 14v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4" />
-            </svg>
-            <span>Baixar representação visual</span>
-          </a>
-          <a class="action" href="diploma-01247760-modelo.xml" download>
-            <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 3v11" />
-              <path d="m7 10 5 5 5-5" />
-              <path d="M4 14v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4" />
-            </svg>
-            <span>Baixar XML assinado</span>
-          </a>
-        </aside>
-
-        <section class="right-panel">
-          <h1 class="panel-title">Dados públicos do diploma</h1>
-
-          <article class="section">
-            <div class="section-label">Diplomado</div>
-            <div class="fields">
-              <div class="field"><small>Nome</small><div>DANIEL ROCHA DA SILVA</div></div>
-              <div class="field"><small>Nacionalidade</small><div>Brasileiro</div></div>
-              <div class="field"><small>Naturalidade</small><div>Rio de Janeiro, RJ</div></div>
-              <div class="field"><small>CPF</small><div>***.133.803-**</div></div>
-              <div class="field"><small>Data de Nascimento</small><div>22/05/1999</div></div>
-              <div class="field"><small>Data de Ingresso</small><div>2020/2</div></div>
-              <div class="field"><small>Data de Conclusão</small><div>11/11/2022</div></div>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <div class="logo-area">
+                <img src="LOGO-B4.png" alt="Logo B4" class="logo">
             </div>
-          </article>
-
-          <article class="section">
-            <div class="section-label">Autenticidade Digital</div>
-            <div class="fields">
-              <div class="field span-2"><small>Certificado ICP-Brasil</small><div>AC Certisign RFB G5:DF:8A:3E:12:B4:9C:7D:E8:F2:A1</div></div>
-              <div class="field span-2"><small>Assinatura Digital</small><div>Válida - ICP-Brasil (Cadeia V10)</div></div>
-              <div class="field"><small>Data/Hora Assinatura</small><div>14/02/2023 14:32:18 UTC-3</div></div>
-              <div class="field"><small>Selo e-MEC</small><div>EMEC-2023-DIP-290357</div></div>
-              <div class="field span-2"><small>URL Verificação Oficial</small><div>https://emec.mec.gov.br/verifica/diploma/298.298.01247760.290357</div></div>
-              <div class="field span-2"><small>Chave Pública (Base64)</small><div style="word-break: break-all; font-family: monospace; font-size: 12px;">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAw2...</div></div>
-            </div>
-          </article>
-
-          <article class="section">
-            <div class="section-label">Diploma</div>
-            <div class="fields">
-              <div class="field"><small>Data de Expedição</small><div>20/12/2022</div></div>
-              <div class="field"><small>Número de Registro</small><div>290357</div></div>
-              <div class="field"><small>Data de Registro</small><div>14/02/2023</div></div>
-              <div class="field"><small>Data de Colação</small><div>05/12/2022</div></div>
-              <div class="field"><small>Livro de Registro</small><div>Livro 47 - Folha 139</div></div>
-              <div class="field"><small>Processo e-MEC</small><div>23709.000298/2022-61</div></div>
-              <div class="field span-2"><small>Código de Barras</small><div>7 898733 648001 290357</div></div>
-              <div class="field span-2"><small>QR Code SHA1</small><div>a94f3c8e7d1b5f2a9e6c4b8d1f5e3c7a2b9d6f4e</div></div>
-            </div>
-          </article>
-
-          <article class="section">
-            <div class="section-label">Dados do Curso</div>
-            <div class="fields">
-              <div class="field"><small>Nome do Curso</small><div>Curso Superior de Tecnologia em Ciência Da Computação</div></div>
-              <div class="field"><small>Código do Curso e-MEC</small><div>1341021</div></div>
-              <div class="field"><small>Título Conferido</small><div>Tecnólogo</div></div>
-              <div class="field"><small>Grau Conferido</small><div>Tecnologia</div></div>
-              <div class="field span-2"><small>Endereço Curso</small><div>Rio de Janeiro/RJ - Polo I(3093)U</div></div>
-              <div class="field"><small>Polo</small><div>RIO DE JANEIRO/RJ - I(3093)U</div></div>
-              <div class="field"><small>Autorização</small><div>Portaria MEC nº 654 de 22/03/2019</div></div>
-              <div class="field span-2"><small>Reconhecimento</small><div>Reconhecido pela Portaria Ministerial nº 654 de 22/03/2019, publicada no D.O.U. de 25/03/2019.</div></div>
-            </div>
-          </article>
-
-          <article class="section">
-            <div class="section-label">Instituição de Ensino Emissora</div>
-            <div class="fields">
-              <div class="field"><small>Nome</small><div>Universidade Pitágoras Unopar Anhanguera</div></div>
-              <div class="field"><small>Código e-MEC</small><div>298</div></div>
-              <div class="field"><small>CNPJ</small><div>38.733.648/0001-40</div></div>
-              <div class="field"><small>Endereço</small><div>Avenida Paris, Parque Residencial João Piza - Londrina, PR</div></div>
-              <div class="field"><small>Credenciamento</small><div>Decreto Federal de 03/07/2017</div></div>
-              <div class="field"><small>Recredenciamento</small><div>Portaria nº 654 de 22/03/2019</div></div>
-              <div class="field span-2"><small>Mantenedora</small><div>Editora e Distribuidora Educacional S/A (38.733.648/0001-40)</div></div>
-            </div>
-          </article>
-
-          <article class="section">
-            <div class="section-label">Instituição de Ensino Registradora</div>
-            <div class="fields">
-              <div class="field"><small>Nome</small><div>Universidade Pitágoras Unopar Anhanguera</div></div>
-              <div class="field"><small>Código e-MEC</small><div>298</div></div>
-              <div class="field"><small>CNPJ</small><div>38.733.648/0001-40</div></div>
-              <div class="field"><small>Endereço</small><div>Avenida Paris, Parque Residencial João Piza - Londrina, PR</div></div>
-              <div class="field"><small>Credenciamento</small><div>Portaria nº 556 de 20/02/2006</div></div>
-              <div class="field"><small>Recredenciamento</small><div>Portaria nº 654 de 22/03/2019</div></div>
-              <div class="field span-2"><small>Mantenedora</small><div>Editora e Distribuidora Educacional S/A (38.733.648/0001-40)</div></div>
-            </div>
-          </article>
-
-          <article class="section">
-            <div class="section-label">Observações Oficiais</div>
-            <ul class="obs-list">
-              <li>As Atividades Complementares Obrigatórias, num total de 100 (cem) horas, foram concluídas.</li>
-              <li>Estudante dispensado(a) do ENADE 2015, nos termos da Portaria Normativa MEC nº 40/2007, Art. 33-G, §3º e Portaria Normativa MEC nº 3 de 06/03/2019.</li>
-              <li>Competências do concluinte: produção de software básico e aplicativo, solução de problemas com tecnologias atuais, adaptação a novas tecnologias, atuação multidisciplinar e trabalho em equipe.</li>
-            </ul>
-          </article>
-
-          <article class="section">
-            <div class="section-label">Histórico Escolar</div>
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Sem</th><th>Código</th><th>Disciplina</th><th>Ano/Sem</th><th>C.H.</th><th>Conceito</th><th>Resultado</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr><td>1</td><td>5ADM389</td><td>Algoritmos e Programação</td><td>2020/2</td><td>80</td><td>EX</td><td>APROVADO</td></tr>
-                  <tr><td>1</td><td>5ADM390</td><td>Análise e Projeto de Algoritmos</td><td>2020/2</td><td>40</td><td>EX</td><td>APROVADO</td></tr>
-                  <tr><td>1</td><td>5CON129</td><td>Análise e Projeto de Software</td><td>2020/2</td><td>80</td><td>MB</td><td>APROVADO</td></tr>
-                  <tr><td>1</td><td>5EDU290</td><td>Arquitetura e Organização de Computadores I</td><td>2020/2</td><td>20</td><td>-</td><td>APROVADO</td></tr>
-                  <tr><td>1</td><td>5MKT133</td><td>Arquitetura e Organização de Computadores II</td><td>2020/2</td><td>80</td><td>MB</td><td>APROVADO</td></tr>
-                  <tr><td>1</td><td>5SOC127</td><td>Banco de Dados I</td><td>2020/2</td><td>80</td><td>MB</td><td>APROVADO</td></tr>
-                  <tr><td>2</td><td>5ADM319</td><td>Banco de Dados II</td><td>2021/1</td><td>80</td><td>MB</td><td>APROVADO</td></tr>
-                  <tr><td>2</td><td>5ADM320</td><td>Circuitos Digitais</td><td>2021/1</td><td>80</td><td>MB</td><td>APROVADO</td></tr>
-                  <tr><td>2</td><td>5ADM321</td><td>Compiladores</td><td>2021/1</td><td>40</td><td>EX</td><td>APROVADO</td></tr>
-                  <tr><td>2</td><td>5CON119</td><td>Comprovação de Competência na Leitura de Textos em Língua Inglesa</td><td>2021/1</td><td>80</td><td>MB</td><td>APROVADO</td></tr>
-                  <tr><td>2</td><td>5SOC137</td><td>Computação Científica</td><td>2021/1</td><td>80</td><td>MB</td><td>APROVADO</td></tr>
-                  <tr><td>3</td><td>5ADM383</td><td>Computação Gráfica</td><td>2021/2</td><td>80</td><td>MB</td><td>APROVADO</td></tr>
-                  <tr><td>3</td><td>5ADM413</td><td>Computação Simbólica e Numérica</td><td>2021/2</td><td>40</td><td>EX</td><td>APROVADO</td></tr>
-                  <tr><td>3</td><td>5ADM414</td><td>Data Science</td><td>2021/2</td><td>80</td><td>MB</td><td>APROVADO</td></tr>
-                  <tr><td>3</td><td>5MKT136</td><td>Desenvolvimento de Games</td><td>2021/2</td><td>80</td><td>EX</td><td>APROVADO</td></tr>
-                  <tr><td>4</td><td>5ADM415</td><td>Desenvolvimento Web e Mobile</td><td>2022/1</td><td>160</td><td>EX</td><td>APROVADO</td></tr>
-                  <tr><td>4</td><td>5ADM416</td><td>Eletiva Institucional</td><td>2022/1</td><td>80</td><td>MB</td><td>APROVADO</td></tr>
-                  <tr><td>4</td><td>5ADM417</td><td>Engenharia de Software</td><td>2022/1</td><td>80</td><td>EX</td><td>APROVADO</td></tr>
-                  <tr><td>4</td><td>5DIR061</td><td>Estatística e Probabilidade Computacional</td><td>2022/1</td><td>80</td><td>EX</td><td>APROVADO</td></tr>
-                  <tr><td>5</td><td>5ADM381</td><td>Estrutura de Dados I</td><td>2022/2</td><td>160</td><td>MB</td><td>APROVADO</td></tr>
-                  <tr><td>5</td><td>5ADM412</td><td>Estrutura de Dados II</td><td>2022/2</td><td>40</td><td>EX</td><td>APROVADO</td></tr>
-                  <tr><td>5</td><td>5CON161</td><td>Gerência de Projetos</td><td>2022/2</td><td>80</td><td>MB</td><td>APROVADO</td></tr>
-                  <tr><td>5</td><td>5MAT079</td><td>Iniciação ao Conhecimento Acadêmico</td><td>2022/2</td><td>80</td><td>EX</td><td>APROVADO</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </article>
-        </section>
-      </main>
-      
-      <footer style="background: #f9fafb; border-top: 1px solid #e5e7eb; padding: 20px; text-align: center; font-size: 13px; color: #6b7280;">
-        <div style="margin-bottom: 8px;">
-          <strong>Sistema Nacional de Registro de Diplomas Digitais</strong> | Versão 3.8.2
+            <h2 class="hero-title">
+                Transforme seu negócio<br>
+                com a plataforma<br>
+                líder de mercado.
+            </h2>
+            <p class="hero-subtitle">
+                Transforme a gestão acadêmica com a <strong>única plataforma do mercado que automatiza</strong> todos os processos de emissão, registro e renotarização.
+            </p>
         </div>
-        <div style="margin-bottom: 8px;">
-          Última verificação: 26/02/2026 às 15:43:27 (UTC-3) | Status: ✓ Validado
+
+        <div class="right-side">
+            <div class="login-card">
+                <div class="login-header">
+                    <h1>Bem-vindo de volta</h1>
+                    <p>Faça login para acessar o sistema</p>
+                </div>
+
+                <form id="loginForm" onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="seu@email.com"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="••••••••"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" name="remember">
+                            <span>Lembrar-me</span>
+                        </label>
+                        <a href="#" class="forgot-password">Esqueci a senha</a>
+                    </div>
+
+                    <button type="submit" class="btn-login">
+                        Entrar
+                    </button>
+                </form>
+
+                <div class="divider">ou</div>
+
+                <div class="validate-diploma">
+                    <p class="validate-diploma-title">Validar diploma sem login</p>
+                    <form class="validate-form" onsubmit="handleValidate(event)">
+                        <input 
+                            type="text" 
+                            name="codigo" 
+                            placeholder="Código do diploma"
+                            required
+                        >
+                        <button type="submit" aria-label="Validar diploma">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                                <path d="M11 8v6"></path>
+                                <path d="M8 11h6"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div style="font-size: 12px; color: #9ca3af;">
-          Token de Sessão: SYS-BR-290357-2026-02-26-8F4D2C | IP: 201.***.***.147
-        </div>
-      </footer>
     </div>
-  </body>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            // Mostra mensagem de acesso negado (apenas visual)
+            alert('⚠️ ACESSO NEGADO\n\nVocê não possui credenciais autorizadas para acessar o sistema administrativo.\n\nPara validar um diploma, utilize o campo "Validar diploma" abaixo.');
+        }
+
+        function handleValidate(event) {
+            event.preventDefault();
+            
+            const codigo = event.target.codigo.value.trim();
+            
+            // Se o código for 290357, redireciona para a página do Daniel
+            if (codigo === '290357') {
+                window.location.href = 'diploma.html';
+            } else {
+                alert('❌ DIPLOMA NÃO ENCONTRADO\n\nO código informado não foi localizado em nossa base de dados.\n\nVerifique o código e tente novamente.');
+            }
+        }
+    </script>
+</body>
 </html>
