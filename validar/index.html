@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação de Diploma - Sistema B4</title>
+    <link rel="icon" type="image/png" href="../icone-site.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Nunito Sans", "Segoe UI", Roboto, Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            border-radius: 12px;
+            padding: 48px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            height: 60px;
+            margin-bottom: 32px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #2d3748;
+            margin-bottom: 16px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #6b7280;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .error-icon {
+            font-size: 64px;
+            margin-bottom: 24px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #fbbf24;
+            color: #1a202c;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+
+        .btn-back:hover {
+            background: #f59e0b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="../LOGO-B4.png" alt="Logo B4" class="logo">
+        <div class="error-icon">⚠️</div>
+        <h1>Código de diploma não informado</h1>
+        <p>
+            Para validar um diploma, você precisa informar o código completo na URL.<br>
+            Exemplo: <strong>validador-diplomas.online/validar/290357</strong>
+        </p>
+        <a href="/" class="btn-back">Voltar à página inicial</a>
+    </div>
+</body>
+</html>
