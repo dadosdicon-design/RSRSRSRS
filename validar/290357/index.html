@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="../../icone-site.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <style>
       :root {
         --bg: #f4f5f8;
@@ -49,6 +49,51 @@
       .logo {
         height: 52px;
         width: auto;
+      }
+
+      .search-strip {
+        background: #fff;
+        border-bottom: 1px solid var(--line);
+        padding: 12px 16px;
+      }
+
+      .search-input-wrap {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        max-width: 470px;
+      }
+
+      .search-input {
+        flex: 1;
+        height: 52px;
+        border: 1px solid #cfd4dc;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 33px;
+        color: #4b5563;
+        outline: none;
+      }
+
+      .search-input::placeholder {
+        color: #6b7280;
+      }
+
+      .search-button {
+        width: 52px;
+        height: 52px;
+        border: 1px solid #cfd4dc;
+        border-radius: 6px;
+        background: #f3f4f6;
+        color: #374151;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .search-icon {
+        width: 23px;
+        height: 23px;
       }
 
       .content {
@@ -246,74 +291,86 @@
 
       @media (max-width: 620px) {
         .topbar { padding: 10px 14px; }
-        .logo { height: 44px; }
-        .left-panel { padding: 14px; }
-        .right-panel { padding: 14px 12px 18px; }
+        .logo { height: 50px; }
+
+        .search-strip { padding: 10px 14px; }
+        .search-input { height: 46px; font-size: 15px; padding: 0 16px; }
+        .search-button { width: 46px; height: 46px; }
+        .search-icon { width: 21px; height: 21px; }
+
+        .left-panel { padding: 16px 14px; }
+        .right-panel { padding: 16px 12px 20px; }
         
         .status { font-size: 24px; }
         .status::before { width: 12px; height: 12px; }
-        .status-text { font-size: 24px; }
+        .status-text { font-size: 22px; }
         .status-code { 
           margin: 10px 0 12px;
-          font-size: 15px;
+          font-size: 16px;
         }
         
         .action { 
-          font-size: 14px;
+          font-size: 15px;
           padding: 10px 12px;
           margin-bottom: 8px;
         }
         .action-icon { width: 20px; height: 20px; }
         
         .panel-title { 
-          font-size: 24px; 
+          font-size: 22px; 
           margin-bottom: 12px;
         }
         
         .section { 
-          padding: 14px 12px;
+          padding: 16px 14px;
           margin-bottom: 12px;
         }
         
-        .section-label { font-size: 14px; margin-bottom: 12px; }
+        .section-label { font-size: 15px; margin-bottom: 12px; }
         
         .fields { 
           grid-template-columns: 1fr; 
-          gap: 12px;
+          gap: 14px;
         }
         
-        .field small { font-size: 11px; }
-        .field div { font-size: 14px; }
+        .field small { font-size: 12px; }
+        .field div { font-size: 17px; }
         
-        table { min-width: 400px; font-size: 13px; }
-        th, td { padding: 8px 6px; font-size: 13px; }
+        table { min-width: 460px; font-size: 14px; }
+        th, td { padding: 8px 6px; font-size: 14px; }
       }
 
       @media (max-width: 420px) {
         .topbar { padding: 8px 12px; }
-        .logo { height: 38px; }
+        .logo { height: 44px; }
+
+        .search-strip { padding: 8px 12px; }
+        .search-input { height: 42px; font-size: 14px; padding: 0 14px; }
+        .search-button { width: 42px; height: 42px; }
+        .search-icon { width: 19px; height: 19px; }
+
         .left-panel { padding: 12px; }
         .right-panel { padding: 12px 10px 16px; }
         
         .status { font-size: 20px; gap: 8px; }
         .status::before { width: 10px; height: 10px; }
-        .status-text { font-size: 20px; }
+        .status-text { font-size: 21px; }
         .status-code { 
           margin: 8px 0 10px;
-          font-size: 13px;
+          font-size: 15px;
         }
         
-        .action { font-size: 13px; padding: 9px 10px; }
+        .action { font-size: 14px; padding: 9px 10px; }
         .action-icon { width: 18px; height: 18px; }
         
         .panel-title { font-size: 20px; }
         .section { padding: 12px 10px; }
         .section-label { font-size: 13px; }
-        .field small { font-size: 10px; }
-        .field div { font-size: 13px; }
+        .field small { font-size: 11px; }
+        .field div { font-size: 16px; }
         
-        table { min-width: 350px; }
-        th, td { padding: 7px 5px; font-size: 12px; }
+        table { min-width: 380px; }
+        th, td { padding: 7px 5px; font-size: 13px; }
       }
     </style>
   </head>
@@ -322,6 +379,18 @@
       <header class="topbar">
         <img src="../../LOGO-B4.png" alt="Logo B4" class="logo" />
       </header>
+
+      <div class="search-strip">
+        <div class="search-input-wrap">
+          <input class="search-input" type="text" placeholder="Validação por código" aria-label="Validação por código" />
+          <button class="search-button" type="button" aria-label="Pesquisar código">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
 
       <main class="content">
         <aside class="left-panel">
