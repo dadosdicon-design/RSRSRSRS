@@ -276,39 +276,131 @@
 
             .left-side {
                 padding: 40px 30px;
-                min-height: 40vh;
+                min-height: 35vh;
             }
+
+            .logo-area { margin-bottom: 40px; }
+            .logo { height: 50px; }
 
             .hero-title {
                 font-size: 36px;
+                margin-bottom: 20px;
+            }
+
+            .hero-subtitle {
+                font-size: 17px;
             }
 
             .right-side {
                 box-shadow: none;
+                padding: 40px 30px;
             }
         }
 
         @media (max-width: 640px) {
             .left-side {
                 padding: 30px 20px;
+                min-height: auto;
             }
+
+            .logo-area { margin-bottom: 30px; }
+            .logo { height: 44px; }
 
             .hero-title {
                 font-size: 28px;
+                margin-bottom: 16px;
             }
 
             .hero-subtitle {
-                font-size: 16px;
+                font-size: 15px;
             }
 
             .right-side {
                 padding: 30px 20px;
             }
 
+            .login-card {
+                max-width: 100%;
+            }
+
+            .login-header {
+                margin-bottom: 32px;
+            }
+
+            .login-header h1 {
+                font-size: 24px;
+            }
+
+            .login-header p {
+                font-size: 14px;
+            }
+
             .form-options {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 12px;
+            }
+
+            .validate-form {
+                flex-direction: column;
+            }
+
+            .validate-form button {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .left-side {
+                padding: 24px 16px;
+            }
+
+            .logo-area { margin-bottom: 24px; }
+            .logo { height: 38px; }
+
+            .hero-title {
+                font-size: 24px;
+                margin-bottom: 14px;
+            }
+
+            .hero-subtitle {
+                font-size: 14px;
+            }
+
+            .right-side {
+                padding: 24px 16px;
+            }
+
+            .login-header {
+                margin-bottom: 28px;
+            }
+
+            .login-header h1 {
+                font-size: 22px;
+            }
+
+            .form-group label {
+                font-size: 13px;
+            }
+
+            .form-group input {
+                padding: 11px 14px;
+                font-size: 14px;
+            }
+
+            .btn-login {
+                padding: 12px;
+                font-size: 14px;
+            }
+
+            .divider {
+                margin: 24px 0;
+                font-size: 13px;
+            }
+
+            .validate-diploma-title {
+                font-size: 13px;
+                margin-bottom: 14px;
             }
         }
     </style>
